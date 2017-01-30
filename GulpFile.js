@@ -18,7 +18,7 @@ function watch() {
 
 
 function compileSass() {
-  return gulp.src('/scss/main.scss')
+  return gulp.src('sass/styles.scss')
              .pipe(sass())
              .pipe(gulp.dest('dist/styles'));
 }
