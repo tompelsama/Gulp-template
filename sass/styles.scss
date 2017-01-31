@@ -1,11 +1,27 @@
 @import '../neat/neat';
+$helvetica: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+
 
 a {
 	color: green;
 }
 
+h1 {
+	font-family: $helvetica;
+}
+
+p {
+	font-family: $helvetica;
+}
+
 body {
 	background: white;
+	@include pad(0);
+	margin: 0;
+}
+
+header {
+	@include clearfix;
 }
 
 ul {
@@ -16,57 +32,78 @@ ul {
 li.block {
 	@include span-columns(2);
 	@include omega(6n);
+	@include pad(7px);
+	text-align: center;
 }
 
 li:hover {
 	background-color: #212733;
 	color: white;
+	@include pad(7px);
 }
 
 
 .banner {
 	width: 100%;
-	position: absolute;
+	position: relative;
 	margin-top: 200px;
 	#title {
-		@include span-columns(5);	
+		@include span-columns(6);	
 		margin-left: 70px;
 	}
 	#pic {
-		@include span-columns(7);
-		margin-top: -80px;
-		position: absolute;
-		left: 42%;
+		@include media(769px) {
+			@include direction-context(right-to-left) {
+				@include span-columns(6);
+				@include clearfix;
+				margin-top: -250px;
+				margin-right: 0;
+				position: relative;
+				overflow: hidden;
+			}
+		}
 	}
 }
 
-.container {
+
+.outside {
+	@include fill-parent;
+	top: -275px;
 	position: relative;
-	top: 600px;
-	background-color: #003a6f;
-	transform:skew(0deg, 5.5deg);
-	padding: 200px 0;
-	.content {
-		transform:skew(0deg, -5.5deg);
-		margin-bottom: 100px;
-		#left {
-			@include span-columns(4);
-			text-align: center;
-			color: white;
-		}
+	overflow: hidden;
+	.container {
+		top: 80px;
+		position: relative;
+		background-color: #003a6f;
+		transform:skew(0deg, 5.5deg);
+		@include pad(200px 0);
+		.content {
+			transform:skew(0deg, -5.5deg);
+			margin-bottom: 200px;
+			#left {
+				@include span-columns(4);
+				text-align: center;
+				color: white;
+			}
 
-		#mid {
-			@include span-columns(4);
-			text-align: center;
-			color: white;
-		}
+			#mid {
+				@include span-columns(4);
+				text-align: center;
+				color: white;
+			}
 
-		#right {
-			@include span-columns(4);
-			text-align: center;
-			color: white;
-		}
+			#right {
+				@include span-columns(4);
+				text-align: center;
+				color: white;
+			}
 	}
+}
+}
+
+p.context {
+	max-width: 50%;
+	margin: 10px auto;
 }
 
 img {
@@ -74,5 +111,8 @@ img {
 }
 
 footer {
+	@include pad(10px);
 	background-color: black;
+	position: relative;
+	margin-top: -275px;
 }
