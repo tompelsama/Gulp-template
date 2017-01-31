@@ -1,6 +1,7 @@
 var
   gulp           = require('gulp'),
-  sass           = require('gulp-sass')
+  sass           = require('gulp-sass'),
+  browserSync = require('browser-sync').create();
 // WATCH
 gulp.task('watch', watch);
 
@@ -20,12 +21,9 @@ function watch() {
 function compileSass() {
   return gulp.src('sass/styles.scss')
              .pipe(sass())
-             .pipe(gulp.dest('dist/styles'));
+             .pipe(gulp.dest('dist/styles'))
+	         .pipe(browserSync.stream());
 }
-
-
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
 
 // Static server
 gulp.task('browser-sync', function() {

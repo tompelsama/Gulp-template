@@ -1,7 +1,78 @@
 @import '../neat/neat';
 
+a {
+	color: green;
+}
 
 body {
-	background: black;
-	@include span-columns(6);
+	background: white;
+}
+
+ul {
+	width:50%;
+	float: right;
+}
+
+li.block {
+	@include span-columns(2);
+	@include omega(6n);
+}
+
+li:hover {
+	background-color: #212733;
+	color: white;
+}
+
+
+.banner {
+	width: 100%;
+	position: absolute;
+	margin-top: 200px;
+	#title {
+		@include span-columns(5);	
+		margin-left: 70px;
+	}
+	#pic {
+		@include span-columns(7);
+		margin-top: -80px;
+		position: absolute;
+		left: 42%;
+	}
+}
+
+.container {
+	position: relative;
+	top: 600px;
+	background-color: #003a6f;
+	transform:skew(0deg, 5.5deg);
+	padding: 200px 0;
+	.content {
+		transform:skew(0deg, -5.5deg);
+		margin-bottom: 100px;
+		#left {
+			@include span-columns(4);
+			text-align: center;
+			color: white;
+		}
+
+		#mid {
+			@include span-columns(4);
+			text-align: center;
+			color: white;
+		}
+
+		#right {
+			@include span-columns(4);
+			text-align: center;
+			color: white;
+		}
+	}
+}
+
+img {
+	z-index: 1;
+}
+
+footer {
+	background-color: black;
 }

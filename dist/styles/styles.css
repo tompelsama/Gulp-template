@@ -4,11 +4,94 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
+a {
+  color: green; }
+
 body {
-  background: black;
+  background: white; }
+
+ul {
+  width: 50%;
+  float: right; }
+
+li.block {
   float: left;
   display: block;
   margin-right: 2.35765%;
-  width: 48.82117%; }
-  body:last-child {
+  width: 14.70196%; }
+  li.block:last-child {
     margin-right: 0; }
+  li.block:nth-child(6n) {
+    margin-right: 0; }
+  li.block:nth-child(6n+1) {
+    clear: left; }
+
+li:hover {
+  background-color: #212733;
+  color: white; }
+
+.banner {
+  width: 100%;
+  position: absolute;
+  margin-top: 200px; }
+  .banner #title {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 40.29137%;
+    margin-left: 70px; }
+    .banner #title:last-child {
+      margin-right: 0; }
+  .banner #pic {
+    float: left;
+    display: block;
+    margin-right: 2.35765%;
+    width: 57.35098%;
+    margin-top: -80px;
+    position: absolute;
+    left: 42%; }
+    .banner #pic:last-child {
+      margin-right: 0; }
+
+.container {
+  position: relative;
+  top: 600px;
+  background-color: #003a6f;
+  transform: skew(0deg, 5.5deg);
+  padding: 200px 0; }
+  .container .content {
+    transform: skew(0deg, -5.5deg);
+    margin-bottom: 100px; }
+    .container .content #left {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
+      text-align: center;
+      color: white; }
+      .container .content #left:last-child {
+        margin-right: 0; }
+    .container .content #mid {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
+      text-align: center;
+      color: white; }
+      .container .content #mid:last-child {
+        margin-right: 0; }
+    .container .content #right {
+      float: left;
+      display: block;
+      margin-right: 2.35765%;
+      width: 31.76157%;
+      text-align: center;
+      color: white; }
+      .container .content #right:last-child {
+        margin-right: 0; }
+
+img {
+  z-index: 1; }
+
+footer {
+  background-color: black; }
